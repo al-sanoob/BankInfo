@@ -2,16 +2,16 @@
   <h1 class="heading">Bank Search Application</h1>
 </nav>
 
-
 <div class="container section1">
   <div class="input-group flex-nowrap pt-4 pb-3 align-center search-field">
-    
-    <input type="text" class="form-control" [(ngModel)]="bank_name" placeholder="Enter Bank Name / Bank Id / Branch Name to Search " aria-label="Username" aria-describedby="addon-wrapping">
+    <input type="text" class="form-control" [(ngModel)]="bank_name"
+      placeholder="Enter Bank Name / Bank Id / Branch Name to Search " aria-label="Username"
+      aria-describedby="addon-wrapping">
   </div>
+
   <div>
     <div class="pb-3 search-field">
-      <select (change)="changeCity($event)"  class="form-select" aria-label="Default select example">
-        <!-- <option selected>Select a City</option> -->
+      <select (change)="changeCity($event)" class="form-select" aria-label="Default select example">
         <option value="MUMBAI">Mumbai</option>
         <option value="HYDERABAD">Hyderabad</option>
         <option value="KOLKATA">Kolkata</option>
@@ -20,45 +20,41 @@
       </select>
     </div>
   </div>
-  <div class="row">
-    <div class="">
-      <table class="table col-sm-12 table-responsive table-bordered table-striped">
-        <thead class="thead text-center ">
 
-          <tr>
-            <th scope="col">BANK ID</th>
-            <th scope="col">BANK NAME</th>
-            <th scope="col">BRANCH</th>
-            <th scope="col">IFSC</th>
-            <th scope="col">CITY</th>
-            <th scope="col">ADDRESS</th>
-            <th scope="col">STATE</th>
-            <th scope="col"> </th>
-          </tr>
+  <div id="data" class="table-responsive">
+    <table class="table col-sm-12 table-responsive table-bordered table-striped">
 
-        </thead>
-        <tbody class="">
-          <tr
-            *ngFor="let bank of bankDetails | searchfilter:bank_name | paginate:{itemsPerPage:13,currentPage:p}">
-            <td scope="row"><span>{{bank.bank_id}}</span></td>
-            <td routerLink="/bankinfo" scope="row"><span>{{bank.bank_name}}</span></td>
-            <td scope="row"><span>{{bank.branch}}</span></td>
-            <td scope="row"><span>{{bank.ifsc}}</span></td>
-            <td scope="row"><span>{{bank.city}}</span></td>
-            <td scope="row"><span>{{bank.address}}</span></td>
-            <td scope="row"><span>{{bank.state}}</span></td> 
-           <td><input class="mt-2 form-check-input" (click)="addToFavourites()"
-            type="checkbox"   [value]="bank.bank_id" id="checkbox"></td>
+      <thead class="thead text-center ">
+        <tr>
+          <th scope="col">BANK NAME</th>
+          <th scope="col">BRANCH</th>
+          <th scope="col">IFSC</th>
+          <th scope="col">CITY</th>
+          <th scope="col">ADDRESS</th>
+          <th scope="col">STATE</th>
+          <th scope="col">BANK ID</th>
+          <th scope="col"> </th>
+        </tr>
+      </thead>
 
-            <!-- [checked]="bank.branch" -->
-            <!-- (change)="onChangeCheck($event)" -->
-          </tr>
-        </tbody>
-    
-      </table>
-    </div>
-  </div>
+      <tbody class="">
+        <tr *ngFor="let bank of bankDetails | searchfilter:bank_name | paginate:{itemsPerPage:13,currentPage:p}">
+          <td routerLink="/bankinfo" scope="row"><span>{{bank.bank_name}}</span></td>
+          <td scope="row"><span>{{bank.branch}}</span></td>
+          <td scope="row"><span>{{bank.ifsc}}</span></td>
+          <td scope="row"><span>{{bank.city}}</span></td>
+          <td scope="row"><span>{{bank.address}}</span></td>
+          <td scope="row"><span>{{bank.state}}</span></td>
+          <td scope="row"><span>{{bank.bank_id}}</span></td>
+          <td><input class="mt-2 form-check-input" (click)="addToFavourites()" type="checkbox" id="checkbox"></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div> <br>
+
   <p class="text-center">
     <pagination-controls (pageChange)="p=$event"></pagination-controls>
   </p>
+
 </div>

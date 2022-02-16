@@ -15,7 +15,6 @@ export class SearchfilterPipe implements PipeTransform {
       bd.bank_name.toLocaleLowerCase().includes(bank_name.toLocaleLowerCase()) ||
       bd.branch.toLocaleLowerCase().includes(bank_name.toLocaleLowerCase())||
       bd.bank_id.toString().toLocaleLowerCase().includes(bank_name.toLocaleLowerCase())
-
       );
 
   }
