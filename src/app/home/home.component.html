@@ -1,8 +1,8 @@
 <nav class="navbar">
-  <h1 class="heading">Bank Search Application</h1>
+  <h1 class="heading">🏦 Bank Search Application</h1>
 </nav>
 
-<div class="container section1">
+<div class="container">
   <div class="input-group flex-nowrap pt-4 pb-3 align-center search-field">
     <input type="text" class="form-control" [(ngModel)]="bank_name"
       placeholder="Enter Bank Name / Bank Id / Branch Name to Search " aria-label="Username"
@@ -33,7 +33,7 @@
           <th scope="col">ADDRESS</th>
           <th scope="col">STATE</th>
           <th scope="col">BANK ID</th>
-          <th scope="col"> </th>
+          <th scope="col">ADD TO 🔖</th>
         </tr>
       </thead>
 
@@ -46,7 +46,7 @@
           <td scope="row"><span>{{bank.address}}</span></td>
           <td scope="row"><span>{{bank.state}}</span></td>
           <td scope="row"><span>{{bank.bank_id}}</span></td>
-          <td><input class="mt-2 form-check-input" (click)="addToFavourites()" type="checkbox" id="checkbox"></td>
+          <td><input class="m-3 form-check-input" (click)="addToFavourites()" type="checkbox" ></td>
         </tr>
       </tbody>
 
@@ -54,7 +54,10 @@
   </div> <br>
 
   <p class="text-center">
-    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    <pagination-controls  (pageChange)="p=$event"></pagination-controls>
   </p>
+  <div class="footer-copyright text-center mt-5 mb-3">&copy; Developed with ❤️ by
+    <a href="http://sanoobs.rf.gd/" class="text-primary" style="text-decoration: none;">Sanoob S</a>
+  </div>
 
 </div>

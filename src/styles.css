@@ -1,7 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-
 body{
     /* background-image: url(./assets/bankbg.jpg);
     background-size: cover; */
-
+    background: rgba(122, 96, 255, 0.589);
+    background: linear-gradient(202deg, rgba(156, 166, 255, 0.493) 0%, rgba(232, 242, 255, 0.623) 100%);
 }

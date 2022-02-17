@@ -25,13 +25,9 @@ export class HomeComponent implements OnInit {
 
   private baseUrl = "https://vast-shore-74260.herokuapp.com/banks";
   public myCity = "MUMBAI"
-
   bankDetails: BankDetails[] = [];
-
   bank_name: any
-
   p: number = 1
-
   selectedValue: any
 
   constructor(private httpClient: HttpClient) { }
